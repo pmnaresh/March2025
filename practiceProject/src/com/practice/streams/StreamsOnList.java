@@ -7,11 +7,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Main {
+public class StreamsOnList {
 
 	public static void main(String[] args) {
 
-		List<Integer> numberList =Arrays.asList(12,13,14,17,16,56,78,98);
+		List<Integer> numberList =Arrays.asList(12,13,14,17,16,56,78,98,12,13,14,17);
 		
 		//evenNumbers
 		List<Integer> evenNumberList=numberList.stream().filter(n->n%2==0).collect(Collectors.toList());
@@ -36,6 +36,15 @@ public class Main {
 		//sum of numbers in a list
 		Integer total =numberList.stream().reduce(0,Integer::sum);
 		System.out.println("sum of numbers is -->"+total);
+		
+		//Distinct numbers	
+		List<Integer> uniqueNumberList=	numberList.stream().distinct().collect(Collectors.toList());
+		System.out.println("uniqueNumberList -->"+uniqueNumberList);
+		
+		//assending order
+		List<Integer> assendingOrderList= numberList.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+		System.out.println("assendingOrderList-->"+assendingOrderList);
+		
 	}
 
 }

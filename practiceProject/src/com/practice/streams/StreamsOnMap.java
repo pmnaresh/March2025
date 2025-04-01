@@ -13,7 +13,7 @@ public class StreamsOnMap {
 
 		Map<String, Integer> hm = Map.of("Naresh", 21, "Suresh", 22, "Naveen", 13, "bhaddam", 7, "bharath", 34);
 
-		Set<Entry<String, Integer>> entry = hm.entrySet();
+		Set<Map.Entry<String, Integer>> entry = hm.entrySet();
 		// key based sorting
 		entry.stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
 
@@ -46,15 +46,14 @@ public class StreamsOnMap {
 		// fetch values from hashmap
 		Collection<String> values = hashMap.values();
 		System.out.println("values are -->" + values);
-		
-		
 
+		Iterator itr1 = hashMap.entrySet().iterator();
 		// customised key and values from map on every itreation
-		while (itr.hasNext()) {
-			Map.Entry<Integer, String> en =  (Entry<Integer, String>) itr.next();
+		while (itr1.hasNext()) {
+			Map.Entry<Integer, String> en = (Entry<Integer, String>) itr1.next();
 
-			System.out.println("key-->"+en.getKey());
-			System.out.println("value-->"+en.getValue());
+			System.out.println("key-->" + en.getKey());
+			System.out.println("value-->" + en.getValue());
 		}
 	}
 

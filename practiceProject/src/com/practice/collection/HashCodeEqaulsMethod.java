@@ -1,13 +1,15 @@
 package com.practice.collection;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class HashCodeEqaulsMethod {
 
 	public static void main(String[] args) {
 
-		List<Product> products = new ArrayList<>();
+		Set<Product> products = new HashSet<>();
 
 		for (int i = 0; i < 5; i++) {
 			products.add(new Product(i, "Naresh", "MPL"));

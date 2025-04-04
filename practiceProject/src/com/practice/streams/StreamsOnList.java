@@ -22,6 +22,16 @@ public class StreamsOnList {
 		List<Integer> oddNumberList = numberList.stream().filter(n -> n % 2 != 0).collect(Collectors.toList());
 		System.out.println("Odd Numbers from list are -->" + oddNumberList);
 
+		// evenodd
+		Map<Boolean, List<Integer>> evenOddMap = numberList.stream()
+				.collect(Collectors.partitioningBy(n -> n % 2 == 0));
+
+		List<Integer> evenNumbers = evenOddMap.get(true);
+		List<Integer> oddNumbers = evenOddMap.get(false);
+
+		System.out.println("Even Numbers: " + evenNumbers);
+		System.out.println("Odd Numbers: " + oddNumbers);
+
 		// Squares of Each number
 		List<Integer> squareOfNumber = numberList.stream().map(n -> n * n).collect(Collectors.toList());
 		System.out.println("Sqaures of numbers are -->" + squareOfNumber);
@@ -48,26 +58,25 @@ public class StreamsOnList {
 				.collect(Collectors.toList());
 		System.out.println("assendingOrderList-->" + assendingOrderList);
 
-		List<String> names = List.of("Apple", "Candy","Banana", "Avocado", "Blueberry");
+		List<String> names = List.of("Apple", "Candy", "Banana", "Avocado", "Blueberry");
 		Map<Object, List<String>> groupedByFirstLetter = names.stream()
 				.collect(Collectors.groupingBy(name -> name.charAt(0)));
-		System.out.println(groupedByFirstLetter);
-		// {A=[Apple, Avocado], B=[Banana, Blueberry]}
+		System.out.println("groupedByFirstLetter-->" + groupedByFirstLetter);
 
 		// to uppercase
 		names.stream().map(String::toUpperCase).forEach(System.out::println);
-		
-		List<String> orderByNames=names.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
-		System.out.println("orderByNames-->"+orderByNames);
+
+		List<String> orderByNames = names.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+		System.out.println("orderByNames-->" + orderByNames);
 
 		// starts with A
 		List<String> startsWithAlist = names.stream().filter(n -> n.startsWith("A")).collect(Collectors.toList());
 		System.out.println("startsWithAlist-->" + startsWithAlist);
 
+		// flatmap
 		List<List<String>> listOfLists = List.of(List.of("A", "B"), List.of("C", "D", "E"));
-
 		List<String> flattenedList = listOfLists.stream().flatMap(List::stream).collect(Collectors.toList());
-		System.out.println("flattenedList-->"+flattenedList); // [A, B, C, D, E]
+		System.out.println("flattenedList-->" + flattenedList); // [A, B, C, D, E]
 
 	}
 

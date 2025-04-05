@@ -6,11 +6,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamsOnList {
 
 	public static void main(String[] args) {
+		
+		String input = "Hello";
+		// Reverse using streams
+		String reversed = IntStream.range(0, input.length()).mapToObj(i -> input.charAt(input.length() - 1 - i))
+				.map(String::valueOf).collect(Collectors.joining());
+		System.out.println("Reversed String: " + reversed);
 
 		List<Integer> numberList = Arrays.asList(12, 13, 14, 17, 16, 56, 78, 98, 12, 13, 14, 17);
 
@@ -23,8 +30,7 @@ public class StreamsOnList {
 		System.out.println("Odd Numbers from list are -->" + oddNumberList);
 
 		// evenodd
-		Map<Boolean, List<Integer>> evenOddMap = numberList.stream()
-				.collect(Collectors.partitioningBy(n -> n % 2 == 0));
+		Map<Boolean, List<Integer>> evenOddMap = numberList.stream().collect(Collectors.partitioningBy(n -> n % 2 == 0));
 
 		List<Integer> evenNumbers = evenOddMap.get(true);
 		List<Integer> oddNumbers = evenOddMap.get(false);

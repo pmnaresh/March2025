@@ -12,6 +12,10 @@ public class StringReverse {
 		// String buffer
 		StringBuffer sb = new StringBuffer("Naresh");
 		System.out.println(sb.reverse());
+
+		// join
+		String st = String.join("-", "i ", "am ", "Naresh");
+		System.out.println(st);
 	}
 
 }

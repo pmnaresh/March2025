@@ -7,14 +7,12 @@ public class SecondHighestInArray {
 		System.out.println("Second largest in arr1: " + getSecondLargest(arr1)); // 34
 
 	}
-
 	private static Integer getSecondLargest(int[] arr1) {
 		int temp;
 		if (arr1.length < 2) {
-			System.out.println("elements are less than to array");
+			System.out.println("elements are less than to 2 comparision isnot possible");
 			return Integer.MIN_VALUE;
 		}
-
 		for (int i = 0; i < arr1.length; i++) {
 			for (int j = i + 1; j < arr1.length; j++) {
 				if (arr1[i] < arr1[j]) {
@@ -24,9 +22,7 @@ public class SecondHighestInArray {
 				}
 			}
 		}
-
 		int first = arr1[0];
-
 		for (int i = 1; i < arr1.length; i++) {
 			if (first != arr1[i]) {
 				return arr1[i];

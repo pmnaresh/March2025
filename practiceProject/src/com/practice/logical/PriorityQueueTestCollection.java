@@ -32,18 +32,25 @@ public class PriorityQueueTestCollection {
         System.out.println("offer Operation in Queue: " + queue.offer("Manoj")); //true -inserts element
         System.out.println("Elements in Queue: " + queue); //[Hitesh, Kumar, Manoj]
 
-        System.out.println("remove Operation in Queue: " + queue.remove());  //Retrieves and removes //Retrieves and removes 
+        System.out.println("remove Operation in Queue: " + queue.remove());  //Retrieves and removes,throws exception if queue is empty
         System.out.println("Elements in Queue: " + queue); //[Kumar, Manoj]
 
-        System.out.println("poll Operation in Queue: " + queue.poll()); //Retrieves and removes  //Kumar
+        System.out.println("poll Operation in Queue: " + queue.poll()); //Retrieves and removes(Kumar)   // return null if there is no element in the queue
         System.out.println("Elements in Queue: " + queue); //[Manoj]
+        
+        
+//        System.out.println(queue.remove());
+//        System.out.println(queue.remove());
+        
+        System.out.println(queue.poll());
+        System.out.println(queue.poll());
         
         //Both add elements to the queue. Difference is that 
         //add() throws exception if queue is full (not here)
         //, offer() returns false
         
         //Both remove the head.
-//        remove() throws if empty,
+//        remove() throws noSuchuelementexception if queue is empty,
 //        poll() returns null.
     }
 }

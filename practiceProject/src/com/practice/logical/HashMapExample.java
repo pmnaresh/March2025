@@ -19,7 +19,6 @@ public class HashMapExample {
 				cityCode.put("India", "Delhi"); // this is OK --try to current key ,not a structural change
 				cityCode.put("Pakisthan", "Lahore"); // this causes ConcurrentModificationException ,its a structural
 														// change
-
 			}
 			System.out.println("Country : " + country + ", Capitol : " + cityCode.get(country));
 		}

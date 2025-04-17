@@ -39,7 +39,7 @@ public class SpiensTest {
 		System.out.println(missingIntegers);
 		
 		//missing integers in list by using streams
-		 List<Integer> missingIntegers1 = IntStream.rangeClosed(1, 9)
+		 List<Integer> missingIntegers1 = IntStream.rangeClosed(1, 10)
 	                .filter(i -> !li.contains(i))
 	                .boxed()
 	                .collect(Collectors.toList());

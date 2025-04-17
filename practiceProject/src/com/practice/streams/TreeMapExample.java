@@ -1,5 +1,6 @@
 package com.practice.streams;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -8,6 +9,14 @@ import java.util.TreeMap;
 public class TreeMapExample {
 
 	public static void main(String[] args) {
+		
+		
+		HashMap<Integer, String> hm=new HashMap<>();
+		
+		hm.put(1, "Naresh kumar");
+		System.out.println(hm.getOrDefault(2, null));
+		
+		System.out.println(hm);
 		TreeMap<Integer, String> treeMap=new TreeMap<>();
 		treeMap.put(9, "Potato");
 		treeMap.put(2, "Chilli");
@@ -21,6 +30,8 @@ public class TreeMapExample {
 		for(Entry<Integer, String> entry :treeMap.entrySet()) {
 			System.out.println(entry);
 		}
+		
+		
 		
 		TreeMap<Student, Integer> studentTreeMap= new TreeMap<>();
 		studentTreeMap.put(new Student(12, "Naresh", "Angallu", 89), 21);

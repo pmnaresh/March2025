@@ -20,7 +20,6 @@ class NumberPrinter {
                         return;
                     }
                 }
-
                 if (number > N) {
                     notifyAll();
                     break;

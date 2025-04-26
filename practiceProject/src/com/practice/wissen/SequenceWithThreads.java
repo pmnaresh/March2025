@@ -4,11 +4,9 @@ class NumberPrinter {
     private int number = 1;
     private final int N;
     private final int TOTAL_THREADS = 3;
-
     public NumberPrinter(int N) {
         this.N = N;
     }
-
     public void printNumbers(int threadId) {
         while (true) {
             synchronized (this) {
@@ -24,7 +22,6 @@ class NumberPrinter {
                     notifyAll();
                     break;
                 }
-
                 System.out.println("THREAD-" + (threadId + 1) + " : " + number);
                 number++;
                 notifyAll();

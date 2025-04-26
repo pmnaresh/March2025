@@ -15,7 +15,6 @@ public class MapIntStream {
 		squaredStream.forEach(System.out::println);
 		// Output: 1, 4, 9, 16, 25
 
-
 		IntStream intStream1 = IntStream.of(1, 2, 3, 4, 5);
 		// Convert to DoubleStream by adding 0.5 to each number
 		DoubleStream doubleStream = intStream1.mapToDouble(n -> n + 0.5);

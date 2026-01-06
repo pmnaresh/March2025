@@ -4,7 +4,7 @@ public class PrimeNumberOrNot {
 
 	public static void main(String[] args) {
 
-		int number = 7;
+		int number = 8;
 		System.out.println(number%2);
 		int result = 0;
 		for (int i = 1; i <= number / 2; i++) {
